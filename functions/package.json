@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "echo 'No lint configured'",
+    "test": "node --version"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^5.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
+
