@@ -1,0 +1,59 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "skin-agent-e82e1",
+          "appId": "1:943355302377:android:f136b8ac3936e79f36bb78",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "skin-agent-e82e1",
+          "appId": "1:943355302377:ios:b2e7376618174a1f36bb78",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "skin-agent-e82e1",
+          "appId": "1:943355302377:ios:b2e7376618174a1f36bb78",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "skin-agent-e82e1",
+          "configurations": {
+            "android": "1:943355302377:android:f136b8ac3936e79f36bb78",
+            "ios": "1:943355302377:ios:b2e7376618174a1f36bb78",
+            "macos": "1:943355302377:ios:b2e7376618174a1f36bb78",
+            "web": "1:943355302377:web:c3460f7caaece86636bb78",
+            "windows": "1:943355302377:web:a92ada26e842317536bb78"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
+}

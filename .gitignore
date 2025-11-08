@@ -1,29 +1,6 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
+# ========================================
+# FLUTTER/DART/PUB RELATED
+# ========================================
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
@@ -43,3 +20,152 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ========================================
+# FIREBASE FUNCTIONS / NODE.JS
+# ========================================
+functions/node_modules/
+functions/lib/**/*.js
+functions/lib/**/*.js.map
+functions/typings/
+functions/*.local
+
+# ========================================
+# MISCELLANEOUS
+# ========================================
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ========================================
+# INTELLIJ/ANDROID STUDIO
+# ========================================
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# ========================================
+# VISUAL STUDIO CODE
+# ========================================
+.vscode/
+*.code-workspace
+
+# ========================================
+# ANDROID SPECIFIC
+# ========================================
+gradle-wrapper.jar
+/android/.gradle
+/android/captures/
+/android/gradlew
+/android/gradlew.bat
+/android/local.properties
+/android/GeneratedPluginRegistrant.java
+/android/.cxx/
+android/key.properties
+**/*.keystore
+**/*.jks
+
+# ========================================
+# BUILD DIRECTORIES
+# ========================================
+**/build/
+/build/
+
+# ========================================
+# IOS SPECIFIC
+# ========================================
+**/dgph
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+**/*sync/
+.sconsign.dblite
+.tags*
+**/.vagrant/
+**/DerivedData/
+Icon?
+**/Pods/
+**/.symlinks/
+profile
+xcuserdata
+**/.generated/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/flutter_assets/
+ios/Flutter/flutter_export_environment.sh
+ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Exceptions to iOS rules
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+!default.perspectivev3
+
+# ========================================
+# LINUX SPECIFIC
+# ========================================
+linux/flutter/ephemeral
+
+# ========================================
+# MACOS SPECIFIC
+# ========================================
+**/Flutter/ephemeral/
+**/Pods/
+**/xcuserdata/
+
+# ========================================
+# WINDOWS SPECIFIC
+# ========================================
+windows/flutter/ephemeral/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+windows/x64/
+windows/x86/
+*.[Cc]ache
+!*.[Cc]ache/
+
+# ========================================
+# ENVIRONMENT FILES
+# ========================================
+*.env
+*.env.local
+*.env.development
+*.env.production
+.envrc
+
+# ========================================
+# BACKUP FILES
+# ========================================
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# ========================================
+# LOG FILES
+# ========================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

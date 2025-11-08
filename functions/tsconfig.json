@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "moduleResolution": "Node",
-    "outDir": "lib",
-    "rootDir": "src",
-    "strict": true,
+    "module": "NodeNext",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "moduleResolution": "nodenext",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017"
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "lib"]
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
 }
-

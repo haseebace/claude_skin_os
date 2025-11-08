@@ -1,31 +1,46 @@
-import express from 'express';
-import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
-import { createUserProfile, UserProfile } from '../services/firestore/userRepository.js';
+import express from "express";
+import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
+import {
+  createUserProfile,
+  UserProfile,
+} from "../services/firestore/userRepository.js";
 
 admin.apps.length === 0 && admin.initializeApp();
 
 const app = express();
 app.use(express.json());
 
-// Simple auth middleware: verifies Firebase ID token from Authorization: Bearer <token>
-app.use(async (req, res, next) => {
+// Simple auth middleware: verifies Firebase ID token
+app.use(async (req: any, res, next) => {
   try {
-    const auth = req.headers.authorization || '';
-    const token = auth.startsWith('Bearer ') ? auth.substring(7) : '';
-    if (!token) return res.status(401).json({ error: 'Missing token' });
+    const auth = req.headers.authorization || "";
+    const token = auth.startsWith("Bearer ") ? auth.substring(7) : "";
+    if (!token) {
+      console.log("Auth: Missing token in Authorization header");
+      return res.status(401).json({"error": "Missing token"});
+    }
+    console.log("Auth: Verifying token");
     const decoded = await admin.auth().verifyIdToken(token);
-    (req as any).uid = decoded.uid;
-    next();
+    console.log("Auth: Token verified successfully for UID:", decoded.uid);
+    req.uid = decoded.uid;
+    return next();
   } catch (e) {
-    return res.status(401).json({ error: 'Invalid token' });
+    console.error("Auth: Token verification failed:", e);
+    const errorMessage = e instanceof Error ? e.message : String(e);
+    return res.status(401).json({
+      "error": "Invalid token",
+      "details": errorMessage,
+    });
   }
 });
 
-app.post('/users', async (req, res) => {
+app.post("/users", async (req: any, res) => {
   try {
-    const uid = (req as any).uid as string;
-    const { email, displayName, photoURL } = req.body || {};
+    const uid = req.uid;
+    const {email, displayName, photoURL} = req.body || {};
+    console.log("Creating user profile:", {uid, email, displayName, photoURL});
+
     const profile: UserProfile = {
       uid,
       email,
@@ -33,10 +48,17 @@ app.post('/users', async (req, res) => {
       photoURL,
       createdAt: Date.now(),
     };
+
     await createUserProfile(profile);
-    return res.status(201).json({ ok: true });
+    console.log("User profile created successfully");
+    return res.status(201).json({"ok": true});
   } catch (e) {
-    return res.status(500).json({ error: 'Failed to create user' });
+    console.error("Error creating user profile:", e);
+    const errorMessage = e instanceof Error ? e.message : String(e);
+    return res.status(500).json({
+      "error": "Failed to create user",
+      "details": errorMessage,
+    });
   }
 });
 

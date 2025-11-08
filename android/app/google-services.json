@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943355302377",
+    "project_id": "skin-agent-e82e1",
+    "storage_bucket": "skin-agent-e82e1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943355302377:android:f136b8ac3936e79f36bb78",
+        "android_client_info": {
+          "package_name": "com.example.claude_skin_os"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSlTRZ_K82sWW-093D_p-bvyy9VIIm6lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
