@@ -66,7 +66,7 @@ class AuthController {
       final base = AppConfig.apiBaseUrl;
       
       if (idToken != null && base.isNotEmpty && !base.contains('REGION-PROJECT')) {
-        final url = Uri.parse('$base/usersApi');
+        final url = Uri.parse('$base/usersApi/users');
         print('[Auth] Step 5: Calling backend API at $url');
         try {
           final resp = await http.post(
@@ -163,7 +163,7 @@ class AuthController {
       final idToken = await cred.user?.getIdToken();
       final base = AppConfig.apiBaseUrl;
       if (idToken != null && base.isNotEmpty && !base.contains('REGION-PROJECT')) {
-        final url = Uri.parse('$base/usersApi');
+        final url = Uri.parse('$base/usersApi/users');
         print('[Auth] Step 4: Calling backend API at $url');
         try {
           final resp = await http.post(

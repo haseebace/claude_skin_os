@@ -9,6 +9,7 @@
 .pub/
 /build/
 /coverage/
+/docs/
 
 # Symbolication related
 app.*.symbols
@@ -169,3 +170,11 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ========================================
+# PROGRESS TRACKING
+# ========================================
+# Keep progress tracking files but ignore sensitive drafts
+docs/progress/*.draft.md
+docs/progress/*-draft.md
+docs/progress/*.tmp

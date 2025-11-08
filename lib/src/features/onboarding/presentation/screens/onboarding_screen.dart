@@ -48,6 +48,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
+        backgroundColor: Color(0xFFF7F4F0),
         body: Center(
           child: CircularProgressIndicator(),
         ),
@@ -74,6 +75,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     ];
 
     return Scaffold(
+      backgroundColor: const Color(0xFFF7F4F0),
       body: Stack(
         children: [
           PageView(controller: controller, children: pages),

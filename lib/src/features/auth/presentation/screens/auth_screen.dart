@@ -69,6 +69,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF7F4F0),
       appBar: AppBar(title: const Text('Sign In')),
       body: Center(
         child: _isLoading
